@@ -33,7 +33,7 @@ window.PORTFOLIO_CONTENT = {
   contacts: {
     instagram: "https://instagram.com/just_kudriavtseva",
     email:     "YOUR_EMAIL",           // name@gmail.com
-    telegram:  "YOUR_TELEGRAM_URL",    // https://t.me/username
+    telegram:  "https://t.me/dikudryavtseva",
   },
 
   /* ---------- 3. ПЕРШИЙ ЕКРАН ---------- */
