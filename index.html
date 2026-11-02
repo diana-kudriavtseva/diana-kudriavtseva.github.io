@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Portfolio — Videography &amp; Photography</title>
+  <meta name="description" content="Портфоліо відеографа та фотографа: розмовні, репортажні, mood-відео, процедури, предметна зйомка та портрети.">
+  <meta name="theme-color" content="#0B0B0D">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до змісту</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <a class="wordmark" href="#top" data-bind="wordmark">PORTFOLIO</a>
+
+    <nav class="nav" aria-label="Головна навігація">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+        <span class="nav-toggle-lines" aria-hidden="true"></span>
+        <span class="visually-hidden">Меню</span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#video">Video</a></li>
+        <li><a href="#photo">Photo</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <span class="lang" aria-label="Мова сайту: українська">UA</span>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow" data-bind="hero.eyebrow"></p>
+        <h1 class="hero-title" id="hero-title" data-bind-html="hero.headline"></h1>
+        <p class="hero-lead" data-bind="hero.text"></p>
+        <a class="line-link" href="#video">
+          <span class="line-link-rule" aria-hidden="true"></span>
+          <span data-bind="hero.cta"></span>
+          <span class="arrow" aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="hero-media" id="hero-media">
+        <!-- зображення / фонове відео підставляє script.js -->
+        <button class="play play--lg" type="button" id="showreel-play" hidden aria-label="Дивитись шоурил">
+          <span class="play-icon" aria-hidden="true"></span>
+        </button>
+        <div class="hero-meta">
+          <span class="hero-meta-rule" aria-hidden="true"></span>
+          <span>Showreel</span>
+          <span id="showreel-duration"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIDEO ============ -->
+    <section class="section section--video" id="video" aria-labelledby="video-title">
+      <div class="section-intro">
+        <p class="eyebrow">Video</p>
+        <h2 class="section-title" id="video-title">Відеороботи</h2>
+        <p class="section-lead" data-bind="videoIntro"></p>
+        <span class="short-rule" aria-hidden="true"></span>
+      </div>
+      <div class="video-grid" id="video-grid"></div>
+    </section>
+
+    <!-- ============ PHOTO ============ -->
+    <section class="section section--photo" id="photo" aria-labelledby="photo-title">
+      <div class="section-intro">
+        <p class="eyebrow">Photo</p>
+        <h2 class="section-title" id="photo-title">Фотографії</h2>
+        <p class="section-lead" data-bind="photoIntro"></p>
+        <span class="short-rule" aria-hidden="true"></span>
+      </div>
+      <div class="photo-grid" id="photo-grid"></div>
+    </section>
+
+    <!-- ============ BRANDS ============ -->
+    <section class="section section--brands" id="brands" aria-labelledby="brands-title" hidden>
+      <div class="section-intro">
+        <p class="eyebrow">Brands</p>
+        <h2 class="section-title" id="brands-title">Бренди</h2>
+        <p class="section-lead" data-bind="brandsIntro"></p>
+        <span class="short-rule" aria-hidden="true"></span>
+      </div>
+      <div class="brands-body">
+        <div class="brands-group" id="clients-group">
+          <h3 class="col-title">Салони та студії</h3>
+          <ul class="clients-list" id="clients-list"></ul>
+        </div>
+        <div class="brands-group" id="brands-group">
+          <h3 class="col-title">Бренди в кадрі</h3>
+          <ul class="brands-list" id="brands-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section--about" id="about" aria-labelledby="about-title">
+      <figure class="about-photo" id="about-photo" hidden></figure>
+      <div class="about-intro">
+        <p class="eyebrow">About</p>
+        <h2 class="section-title" id="about-title">Про мене</h2>
+        <p class="about-name" id="about-name" hidden></p>
+        <p class="about-bio" data-bind="owner.bio"></p>
+      </div>
+      <div class="about-col">
+        <h3 class="col-title">Працюю з</h3>
+        <ul class="dot-list" id="works-with"></ul>
+      </div>
+      <div class="about-col">
+        <h3 class="col-title">Формати</h3>
+        <ul class="dot-list" id="formats"></ul>
+      </div>
+      <div class="about-col" id="about-contacts-col">
+        <h3 class="col-title">Контакти</h3>
+        <ul class="contact-list" id="about-contacts"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="contact" aria-labelledby="closing">
+    <p class="closing" id="closing" data-bind="footer.closing"></p>
+    <ul class="footer-contacts" id="footer-contacts"></ul>
+    <div class="footer-bottom">
+      <span id="copyright"></span>
+      <a class="to-top" href="#top">Нагору</a>
+    </div>
+  </footer>
+
+  <!-- ============ VIDEO MODAL ============ -->
+  <div class="modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Відеоплеєр" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-body">
+      <div class="modal-head">
+        <p class="modal-title" id="video-modal-title"></p>
+        <button class="icon-btn" type="button" data-close aria-label="Закрити">
+          <span class="x" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="player" id="player"></div>
+      <div class="modal-foot">
+        <p class="modal-caption" id="video-modal-caption"></p>
+        <div class="modal-nav" id="video-modal-nav" hidden>
+          <button class="text-btn" type="button" data-video-prev>Попереднє</button>
+          <span id="video-modal-count"></span>
+          <button class="text-btn" type="button" data-video-next>Наступне</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Перегляд фото" hidden>
+    <button class="icon-btn lb-close" type="button" data-close aria-label="Закрити">
+      <span class="x" aria-hidden="true"></span>
+    </button>
+    <button class="lb-arrow lb-prev" type="button" data-lb-prev aria-label="Попереднє фото"><span aria-hidden="true"></span></button>
+    <figure class="lb-figure">
+      <img class="lb-img" id="lb-img" alt="">
+      <figcaption class="lb-caption">
+        <span id="lb-category"></span>
+        <span id="lb-text"></span>
+        <span id="lb-count"></span>
+      </figcaption>
+    </figure>
+    <button class="lb-arrow lb-next" type="button" data-lb-next aria-label="Наступне фото"><span aria-hidden="true"></span></button>
+  </div>
+
+  <!-- ============ SETUP PANEL (тільки з ?setup) ============ -->
+  <aside class="setup-panel" id="setup-panel" hidden aria-label="Режим налаштування"></aside>
+
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
